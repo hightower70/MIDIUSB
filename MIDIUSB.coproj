@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project version="2G - 1.7.8" name="MIDIUSB">
+  <Target name="MIDIUSB" isCurrent="1">
+    <Device manufacturerId="9" manufacturerName="ST" chipId="305" chipName="STM32F103C8" boardId="" boardName=""/>
+    <BuildOption>
+      <Compile>
+        <Option name="OptimizationLevel" value="0"/>
+        <Option name="UseFPU" value="0"/>
+        <Option name="UserEditCompiler" value=""/>
+        <Option name="SupportCPlusplus" value="0"/>
+        <Includepaths>
+          <Includepath path="."/>
+          <Includepath path="include"/>
+          <Includepath path="libmidi/include"/>
+          <Includepath path="libos/include"/>
+          <Includepath path="libos/stm32f103midiusbboard/include"/>
+          <Includepath path="libos/stm32f1xxcmsis/include"/>
+          <Includepath path="libos/stm32f1xxusb/include"/>
+        </Includepaths>
+        <DefinedSymbols>
+          <Define name="STM32F103C8"/>
+          <Define name="STM32F10X_MD"/>
+          <Define name="STM32F103xB"/>
+        </DefinedSymbols>
+      </Compile>
+      <Link useDefault="0">
+        <Option name="DiscardUnusedSection" value="0"/>
+        <Option name="UserEditLinkder" value=""/>
+        <Option name="UseMemoryLayout" value="1"/>
+        <Option name="nostartfiles" value="0"/>
+        <Option name="LTO" value="0"/>
+        <Option name="IsNewStartupCode" value="1"/>
+        <Option name="Library" value="Not use C Library"/>
+        <Option name="UserEditLinker" value="--entry=main; "/>
+        <LinkedLibraries/>
+        <MemoryAreas debugInFlashNotRAM="1">
+          <Memory name="IROM1" type="ReadOnly" size="0x00010000" startValue="0x08000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00005000" startValue="0x20000000"/>
+          <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
+          <Memory name="IRAM2" type="ReadWrite" size="" startValue=""/>
+        </MemoryAreas>
+        <LocateLinkFile path="c:/coocox/coide/configuration/programdata/midiusb/arm-gcc-link.ld" type="0"/>
+      </Link>
+      <Output>
+        <Option name="OutputFileType" value="0"/>
+        <Option name="Path" value="./"/>
+        <Option name="Name" value="MIDIUSB"/>
+        <Option name="HEX" value="1"/>
+        <Option name="BIN" value="1"/>
+      </Output>
+      <User>
+        <UserRun name="Run#1" type="Before" checked="0" value=""/>
+        <UserRun name="Run#1" type="After" checked="0" value=""/>
+      </User>
+    </BuildOption>
+    <DebugOption>
+      <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="ST-Link"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="SWD"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="1M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2009"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32F10x_MD_64.elf"/>
+    </DebugOption>
+    <ExcludeFile/>
+  </Target>
+  <Components path="./"/>
+  <Files>
+    <File name="LibOS/HAL/STM32F1xxCMSIS" path="" type="2"/>
+    <File name="LibOS/HAL/STM32F103MIDIUSBBoard/Header files" path="" type="2"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_nor.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_nor.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCommon" path="" type="2"/>
+    <File name="LibOS/HAL" path="" type="2"/>
+    <File name="LibOS/HAL/STM32F103MIDIUSBBoard/Header files/mxconstants.h" path="LibOS/STM32F103MIDIUSBBoard/Include/mxconstants.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_can.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_can.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_i2c.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_i2c.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_ll_fsmc.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_ll_fsmc.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_dac_ex.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_dac_ex.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Header files/usbd_ctlreq.h" path="LibOS/STM32f1xxUSB/Include/usbd_ctlreq.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_flash.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_flash.c" type="1"/>
+    <File name="LibOS/Header files/sysTimer.h" path="LibOS/Include/sysTimer.h" type="1"/>
+    <File name="LibMIDI/Header files/midiTypes.h" path="LibMIDI/Include/midiTypes.h" type="1"/>
+    <File name="Source files" path="" type="2"/>
+    <File name="LibMIDI/Source files/midiInput.c" path="LibMIDI/Source/midiInput.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Header files/usbd_midi.h" path="LibOS/STM32f1xxUSB/Include/usbd_midi.h" type="1"/>
+    <File name="LibOS/HAL/STM32F103MIDIUSBBoard/Source files/system_stm32f1xx.c" path="LibOS/STM32F103MIDIUSBBoard/Source/system_stm32f1xx.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_rtc.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_rtc.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files" path="" type="2"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_ll_usb.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_ll_usb.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCommon/syscalls.c" path="LibOS/STM32F1xxCommon/syscalls.c" type="1"/>
+    <File name="Header files/mxconstants.h" path="Include/mxconstants.h" type="1"/>
+    <File name="Header files" path="" type="2"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_flash_ex.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_flash_ex.h" type="1"/>
+    <File name="LibOS/Header files/sysHelpers.h" path="LibOS/Include/sysHelpers.h" type="1"/>
+    <File name="LibOS/HAL/STM32F103MIDIUSBBoard" path="" type="2"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_rtc_ex.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_rtc_ex.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_dac.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_dac.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_uart.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_uart.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_ll_fsmc.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_ll_fsmc.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_i2c.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_i2c.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_smartcard.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_smartcard.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Header files/usbd_core.h" path="LibOS/STM32f1xxUSB/Include/usbd_core.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_nor.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_nor.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_pcd.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_pcd.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_crc.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_crc.c" type="1"/>
+    <File name="LibOS" path="" type="2"/>
+    <File name="LibMIDI/Header files/midiInput.h" path="LibMIDI/Include/midiInput.h" type="1"/>
+    <File name="LibOS/Header files/sysTypes.h" path="LibOS/Include/sysTypes.h" type="1"/>
+    <File name="LibMIDI/Header files/midiOutput.h" path="LibMIDI/Include/midiOutput.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_pcd.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_pcd.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_crc.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_crc.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_sram.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_sram.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxUSB" path="" type="2"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_adc.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_adc.h" type="1"/>
+    <File name="Header files/sysConfig.h" path="Include/sysConfig.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Header files/usbd_desc.h" path="LibOS/STM32f1xxUSB/Include/usbd_desc.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Source files/usbd_midi_desc.c" path="LibOS/STM32f1xxUSB/Source/usbd_midi_desc.c" type="1"/>
+    <File name="LibMIDI/Header files" path="" type="2"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_spi.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_spi.h" type="1"/>
+    <File name="LibOS/Source files" path="" type="2"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Source files/usbd_midi_conf.c" path="LibOS/STM32f1xxUSB/Source/usbd_midi_conf.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Header files/usbd_conf.h" path="LibOS/STM32f1xxUSB/Include/usbd_conf.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_ll_usb.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_ll_usb.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_spi.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_spi.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_dma_ex.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_dma_ex.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_pccard.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_pccard.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_dma.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_dma.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_pwr.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_pwr.c" type="1"/>
+    <File name="LibOS/HAL/STM32F103MIDIUSBBoard/Source files" path="" type="2"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_can.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_can.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_iwdg.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_iwdg.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/startup_stm32f103xb.s" path="LibOS/STM32F1xxCMSIS/Startup/startup_stm32f103xb.s" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_sd.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_sd.h" type="1"/>
+    <File name="LibOS/HAL/STM32F103MIDIUSBBoard/Source files/halMain.c" path="LibOS/STM32F103MIDIUSBBoard/Source/halMain.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_rcc.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_rcc.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_ll_sdmmc.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_ll_sdmmc.h" type="1"/>
+    <File name="LibOS/HAL/STM32F103MIDIUSBBoard/Source files/halSystemTimer.c" path="LibOS/STM32F103MIDIUSBBoard/Source/halSystemTimer.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_adc_ex.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_adc_ex.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_dma.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_dma.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_gpio.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_gpio.h" type="1"/>
+    <File name="LibOS/Source files/sysTimer.c" path="LibOS/Source/sysTimer.c" type="1"/>
+    <File name="LibOS/HAL/STM32F103MIDIUSBBoard/Source files/halSystem.c" path="LibOS/STM32F103MIDIUSBBoard/Source/halSystem.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_hcd.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_hcd.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_rcc.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_rcc.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_eth.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_eth.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_smartcard.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_smartcard.c" type="1"/>
+    <File name="Header files/stm32f1xx_hal_conf.h" path="Include/stm32f1xx_hal_conf.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_irda.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_irda.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Source files/usbd_ioreq.c" path="LibOS/STM32f1xxUSB/Source/usbd_ioreq.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_adc_ex.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_adc_ex.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_rtc.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_rtc.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_sd.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_sd.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_pcd_ex.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_pcd_ex.c" type="1"/>
+    <File name="LibMIDI/Header files/midiUSB.h" path="LibMIDI/Include/midiUSB.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_pwr.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_pwr.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_dac.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_dac.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_gpio.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_gpio.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_usart.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_usart.h" type="1"/>
+    <File name="LibOS/Source files/sysHelpers.c" path="LibOS/Source/sysHelpers.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_flash.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_flash.h" type="1"/>
+    <File name="LibMIDI/Source files" path="" type="2"/>
+    <File name="LibOS/Header files/sysMain.h" path="LibOS/Include/sysMain.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_cec.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_cec.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_adc.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_adc.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Header files/usb_device.h" path="LibOS/STM32f1xxUSB/Include/usb_device.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Source files/usbd_ctlreq.c" path="LibOS/STM32f1xxUSB/Source/usbd_ctlreq.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_dac_ex.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_dac_ex.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_nand.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_nand.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_hcd.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_hcd.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Header files/usbd_ioreq.h" path="LibOS/STM32f1xxUSB/Include/usbd_ioreq.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_gpio_ex.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_gpio_ex.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_sram.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_sram.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_can_ex.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_can_ex.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_eth.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_eth.c" type="1"/>
+    <File name="LibOS/HAL/STM32F103MIDIUSBBoard/Header files/halMIDIPort.h" path="LibOS/STM32F103MIDIUSBBoard/Include/halMIDIPort.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_wwdg.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_wwdg.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Source files/usbd_midi.c" path="LibOS/STM32f1xxUSB/Source/usbd_midi.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_pccard.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_pccard.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_i2s.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_i2s.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_rcc_ex.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_rcc_ex.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_pcd_ex.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_pcd_ex.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_tim_ex.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_tim_ex.h" type="1"/>
+    <File name="LibMIDI/Header files/midiEventQueue.h" path="LibMIDI/Include/midiEventQueue.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_conf_template.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_conf_template.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_uart.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_uart.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_spi_ex.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_spi_ex.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_rtc_ex.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_rtc_ex.c" type="1"/>
+    <File name="LibOS/HAL/STM32F103MIDIUSBBoard/Source files/halMIDIPort.c" path="LibOS/STM32F103MIDIUSBBoard/Source/halMIDIPort.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_def.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_def.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_gpio_ex.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_gpio_ex.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Header files/usbd_def.h" path="LibOS/STM32f1xxUSB/Include/usbd_def.h" type="1"/>
+    <File name="LibOS/Header files" path="" type="2"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_tim.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_tim.c" type="1"/>
+    <File name="LibOS/HAL/STM32F103MIDIUSBBoard/Header files/stm32f1xx_it.h" path="LibOS/STM32F103MIDIUSBBoard/Include/stm32f1xx_it.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_wwdg.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_wwdg.c" type="1"/>
+    <File name="LibMIDI/Source files/midiEventQueue.c" path="LibMIDI/Source/midiEventQueue.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_tim.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_tim.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_rcc_ex.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_rcc_ex.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_tim_ex.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_tim_ex.c" type="1"/>
+    <File name="LibMIDI/Source files/midiOutput.c" path="LibMIDI/Source/midiOutput.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_ll_sdmmc.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_ll_sdmmc.c" type="1"/>
+    <File name="LibMIDI/Source files/midiUSB.c" path="LibMIDI/Source/midiUSB.c" type="1"/>
+    <File name="LibMIDI" path="" type="2"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Header files/usbd_midi_if.h" path="LibOS/STM32f1xxUSB/Include/usbd_midi_if.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Source files" path="" type="2"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_iwdg.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_iwdg.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_cortex.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_cortex.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files" path="" type="2"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_cec.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_cec.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_cortex.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_cortex.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Source files/usbd_core.c" path="LibOS/STM32f1xxUSB/Source/usbd_core.c" type="1"/>
+    <File name="Source files/appMain.c" path="Source/appMain.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_nand.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_nand.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxUSB/Header files" path="" type="2"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_usart.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_usart.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_flash_ex.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_flash_ex.c" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_i2s.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_i2s.h" type="1"/>
+    <File name="LibOS/HAL/STM32F103MIDIUSBBoard/Header files/stm32f1xx_hal_conf.h" path="LibOS/STM32F103MIDIUSBBoard/Include/stm32f1xx_hal_conf.h" type="1"/>
+    <File name="LibOS/HAL/STM32F103MIDIUSBBoard/Header files/halHelpers.h" path="LibOS/STM32F103MIDIUSBBoard/Include/halHelpers.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_irda.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_irda.c" type="1"/>
+  </Files>
+</Project>
