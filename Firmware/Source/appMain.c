@@ -1,5 +1,5 @@
 /*****************************************************************************/
-/* Data Collector Application Main File                                      */
+/* USB MIDI converter main File                                              */
 /*                                                                           */
 /* Copyright (C) 2016 Laszlo Arvai                                           */
 /* All rights reserved.                                                      */
@@ -76,7 +76,6 @@ static void appSetLEDState(void)
 		drvHAL_SetPinHigh(CONNECT_LED_GPIO_Port, CONNECT_LED_Pin);
 	}
 
-	
 	// TX LED State
 	if (!halMIDIIsTransmitterEmpty() || !midiOutputIsEmpty())
 	{
