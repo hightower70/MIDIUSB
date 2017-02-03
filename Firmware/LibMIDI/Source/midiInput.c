@@ -126,7 +126,7 @@ void midiInputDataReceived(uint8_t in_data)
 					l_current_input_packet.Data[l_current_received_byte_count++] = in_data;
 
 				// store sysex message
-				l_current_input_packet.PacketHeader = midiGetUSBMIDICodeIndexNumber(l_current_input_packet.Status, l_current_received_byte_count);
+				l_current_input_packet.PacketHeader = midiGetUSBMIDICodeIndexNumber(MIDI_SYSTEM_EXCLUSIVE, l_current_received_byte_count);
 				midiEventQueuePush(&l_midi_input_queue, l_current_input_packet);
 				l_is_receiving = true;
 
@@ -233,7 +233,7 @@ void midiInputDataReceived(uint8_t in_data)
 	if (l_expected_byte_count > 0 && l_current_received_byte_count == l_expected_byte_count)
 	{
 		if(l_sysex_receiving)
-			l_current_input_packet.PacketHeader = midiGetUSBMIDICodeIndexNumber(MIDI_SYSTEM_EXCLUSIVE, l_current_received_byte_count);
+			l_current_input_packet.PacketHeader = CIN_SYSEX;
 		else
 			l_current_input_packet.PacketHeader = midiGetUSBMIDICodeIndexNumber(l_current_input_packet.Status, l_current_received_byte_count);
 

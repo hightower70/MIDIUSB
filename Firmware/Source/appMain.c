@@ -52,7 +52,7 @@ void appMainTask(void)
 	// LED blinking routine
 	appSetLEDState();
 	
-	// tas to handle MIDI communication (except USB->MIDI)
+	// task to handle MIDI communication (except USB->MIDI)
 	midiUSBTask();
 
 	// USB -> MIDI out task
@@ -77,7 +77,7 @@ static void appSetLEDState(void)
 	}
 
 	// TX LED State
-	if (!halMIDIIsTransmitterEmpty() || !midiOutputIsEmpty())
+	if (midiOutputIsTransmitting())
 	{
 		drvHAL_SetPinLow(TX_LED_GPIO_Port, TX_LED_Pin);
 		l_tx_timestamp = sysTimerGetTimestamp();
@@ -91,7 +91,7 @@ static void appSetLEDState(void)
 	}
 	
 	// RX LED State
-	if (!midiInputIsEmpty())
+	if (midiInputIsReceiving())
 	{
 		drvHAL_SetPinLow(RX_LED_GPIO_Port, RX_LED_Pin);
 		l_rx_timestamp = sysTimerGetTimestamp();
