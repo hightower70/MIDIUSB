@@ -134,43 +134,70 @@ static void midiUSBProcessUSBTransmitEvent(void)
 {
 	int16_t packet_length;
 	
-	if (!USBD_MIDI_IsTransmitterBusy(&hUsbDeviceFS) && !midiInputIsEmpty())
+	// check for connection
+	if(midiIsConnected())
 	{
-		packet_length = midiInputEventPopAndStore(l_usb_transmit_buffer, USB_MIDI_DATA_HS_IN_SIZE);
-		
-		if (packet_length > 0)
+		// if connected transfer received MIDI event over the USB
+		if (!USBD_MIDI_IsTransmitterBusy(&hUsbDeviceFS) && !midiInputIsEmpty())
 		{
-			USBD_MIDI_SetTxBuffer(&hUsbDeviceFS, l_usb_transmit_buffer, packet_length);
-			USBD_MIDI_TransmitPacket(&hUsbDeviceFS);
+			packet_length = midiInputEventPopAndStore(l_usb_transmit_buffer, USB_MIDI_DATA_HS_IN_SIZE);
+
+			if (packet_length > 0)
+			{
+				USBD_MIDI_SetTxBuffer(&hUsbDeviceFS, l_usb_transmit_buffer, packet_length);
+				USBD_MIDI_TransmitPacket(&hUsbDeviceFS);
+			}
 		}
 	}
+	else
+	{
+		// if not connected clear MIDI input buffer
+		midiInputClear();
+	}
 }
+
 
 ///////////////////////////////////////////////////////////////////////////////
 /// @brief Processes received data from MIDI USB 
 static void midiUSBProcessUSBReceivedEvent(void)
 {
-	// if buffer is empty -> nothing to do
-	if (l_pending_receive_event_buffer == NULL)
+	// do nothing if it is not connected
+	if(!midiIsConnected())
 		return;
-	
-	// copy events to the event buffer
-	while (l_pending_receiver_event_buffer_index < l_pending_receiver_event_buffer_count)
+
+	// if buffer is not empty -> process buffer
+	if (l_pending_receive_event_buffer != NULL)
 	{
-		if (!midiOutputEventPush(l_pending_receive_event_buffer[l_pending_receiver_event_buffer_index]))
-			break;
+		// copy events to the event buffer
+		while (l_pending_receiver_event_buffer_index < l_pending_receiver_event_buffer_count)
+		{
+			if (!midiOutputEventPush(l_pending_receive_event_buffer[l_pending_receiver_event_buffer_index]))
+				break;
+
+			l_pending_receiver_event_buffer_index++;
+		}
 		
-		l_pending_receiver_event_buffer_index++;
+		// if all events could be copied into event buffer then reset buffer
+		if (l_pending_receiver_event_buffer_index >= l_pending_receiver_event_buffer_count)
+		{
+			l_pending_receive_event_buffer = NULL;
+			l_pending_receiver_event_buffer_count = 0;
+			l_pending_receiver_event_buffer_index = 0;
+		}
 	}
 	
-	// if all events could be copied into event buffer then restart receiver
-	if (l_pending_receiver_event_buffer_index >= l_pending_receiver_event_buffer_count)
+	// if buffer is empty and receiver is not started -> start it
+	if(!USBD_MIDI_IsReceiverBusy(&hUsbDeviceFS))
 	{
-		l_pending_receive_event_buffer = NULL;
-		l_pending_receiver_event_buffer_count = 0;
-		l_pending_receiver_event_buffer_index = 0;
-
-		USBD_MIDI_ReceivePacket(&hUsbDeviceFS);
+		if(l_pending_receive_event_buffer == NULL)
+		{
+			// restart receiver
+			USBD_MIDI_SetRxBuffer(&hUsbDeviceFS, l_usb_receive_buffer);
+			USBD_MIDI_ReceivePacket(&hUsbDeviceFS);
+		}
 	}
 }
+
+
+
 

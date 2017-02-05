@@ -32,11 +32,20 @@ void midiEventQueueInitialize(midiEventQueueInfo* in_event_queue, USBMIDIEventPa
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-/// @param Returns the state (empty/non empty) of the MIDI buffer
+/// @brief Returns the state (empty/non empty) of the MIDI buffer
 /// @param in_event_queue Event queue state descriptor
 bool midiEventQueueIsEmpty(midiEventQueueInfo* in_event_queue)
 {
 	return (in_event_queue->PushIndex == in_event_queue->PopIndex);
+}
+
+///////////////////////////////////////////////////////////////////////////////
+/// @brief Clears MIDI event queue
+/// @param in_event_queue Event queue state descriptor
+void midiEventQueueClear(midiEventQueueInfo* in_event_queue)
+{
+	in_event_queue->PushIndex = 0;
+	in_event_queue->PopIndex = 0;
 }
 
 ///////////////////////////////////////////////////////////////////////////////

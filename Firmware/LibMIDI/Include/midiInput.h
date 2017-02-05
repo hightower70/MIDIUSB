@@ -25,5 +25,6 @@ bool midiInputIsEmpty(void);
 void midiInputDataReceived(uint8_t in_data);
 uint16_t midiInputEventPopAndStore(uint8_t* in_buffer, uint16_t in_buffer_length);
 bool midiInputIsReceiving(void);
+void midiInputClear(void);
 
 #endif

@@ -51,6 +51,13 @@ void midiInputInitialize(void)
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+/// @brief Clears MIDI input queue
+void midiInputClear(void)
+{
+	midiEventQueueClear(&l_midi_input_queue);
+}
+
+///////////////////////////////////////////////////////////////////////////////
 /// @Brief Returns the state of the MIDI In buffer
 /// @return true if MIDI In queue is empty
 bool midiInputIsEmpty(void)

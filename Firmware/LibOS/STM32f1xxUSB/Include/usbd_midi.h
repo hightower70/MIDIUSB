@@ -137,6 +137,7 @@
 	 uint8_t  USBD_MIDI_ReceivePacket(USBD_HandleTypeDef *pdev);
 	 
 	 uint8_t  USBD_MIDI_IsTransmitterBusy(USBD_HandleTypeDef *pdev);
+	 uint8_t USBD_MIDI_IsReceiverBusy(USBD_HandleTypeDef *pdev);
 	 /**
   * @}
   */ 

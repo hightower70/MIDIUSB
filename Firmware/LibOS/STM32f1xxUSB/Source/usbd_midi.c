@@ -2067,16 +2067,17 @@ static uint8_t  USBD_MIDI_DataIn (USBD_HandleTypeDef *pdev, uint8_t epnum)
   */
 static uint8_t  USBD_MIDI_DataOut (USBD_HandleTypeDef *pdev, uint8_t epnum)
 {      
-  USBD_MIDI_HandleTypeDef   *hcdc = (USBD_MIDI_HandleTypeDef*) pdev->pClassData;
+  USBD_MIDI_HandleTypeDef   *hmidi = (USBD_MIDI_HandleTypeDef*) pdev->pClassData;
   
   /* Get the received data length */
-  hcdc->RxLength = USBD_LL_GetRxDataSize (pdev, epnum);
+  hmidi->RxLength = USBD_LL_GetRxDataSize (pdev, epnum);
+  hmidi->RxState = 0;
   
   /* USB data will be immediately processed, this allow next USB traffic being 
   NAKed till the end of the application Xfer */
   if(pdev->pClassData != NULL)
   {
-    ((USBD_MIDI_ItfTypeDef *)pdev->pUserData)->Receive(hcdc->RxBuffer, &hcdc->RxLength);
+    ((USBD_MIDI_ItfTypeDef *)pdev->pUserData)->Receive(hmidi->RxBuffer, &hmidi->RxLength);
 
     return USBD_OK;
   }
@@ -2235,6 +2236,16 @@ uint8_t  USBD_MIDI_IsTransmitterBusy(USBD_HandleTypeDef *pdev)
 	}
 }
 
+/**
+  * @brief  USBD_MIDI_IsReceiverBusy
+  *         Checks USB receiver (OUT endpoint) status
+  * @param  pdev: device instance
+  * @retval true if receiver is waiting for packet, false when receiver is not active endpoint sends NAK
+  */
+uint8_t USBD_MIDI_IsReceiverBusy(USBD_HandleTypeDef *pdev)
+{
+  return (PCD_GET_EP_RX_STATUS((PCD_TypeDef*)((PCD_HandleTypeDef*)(pdev->pData))->Instance, USB_MIDI_DATA_OUT_EP) == USB_EP_RX_VALID);
+}
 
 /**
   * @brief  USBD_MIDI_DataOut
@@ -2245,20 +2256,20 @@ uint8_t  USBD_MIDI_IsTransmitterBusy(USBD_HandleTypeDef *pdev)
   */
 uint8_t  USBD_MIDI_TransmitPacket(USBD_HandleTypeDef *pdev)
 {      
-	USBD_MIDI_HandleTypeDef   *hcdc = (USBD_MIDI_HandleTypeDef*) pdev->pClassData;
+	USBD_MIDI_HandleTypeDef   *hmidi = (USBD_MIDI_HandleTypeDef*) pdev->pClassData;
   
 	if (pdev->pClassData != NULL)
 	{
-		if (hcdc->TxState == 0)
+		if (hmidi->TxState == 0)
 		{
 		  /* Tx Transfer in progress */
-			hcdc->TxState = 1;
+			hmidi->TxState = 1;
       
 			/* Transmit next packet */
 			USBD_LL_Transmit(pdev,
 				USB_MIDI_DATA_IN_EP,
-				hcdc->TxBuffer,
-				hcdc->TxLength);
+				hmidi->TxBuffer,
+				hmidi->TxLength);
       
 			return USBD_OK;
 		}
@@ -2282,17 +2293,18 @@ uint8_t  USBD_MIDI_TransmitPacket(USBD_HandleTypeDef *pdev)
   */
 	  uint8_t  USBD_MIDI_ReceivePacket(USBD_HandleTypeDef *pdev)
 	  {      
-		  USBD_MIDI_HandleTypeDef   *hcdc = (USBD_MIDI_HandleTypeDef*) pdev->pClassData;
+		  USBD_MIDI_HandleTypeDef   *hmidi = (USBD_MIDI_HandleTypeDef*) pdev->pClassData;
   
 		  /* Suspend or Resume USB Out process */
-		  if (pdev->pClassData != NULL)
+		  if (hmidi != NULL)
 		  {
+		  	hmidi->RxState = 1;
 			  if (pdev->dev_speed == USBD_SPEED_HIGH) 
 			  {      
 			    /* Prepare Out endpoint to receive next packet */
 				  USBD_LL_PrepareReceive(pdev,
 					  USB_MIDI_DATA_OUT_EP,
-					  hcdc->RxBuffer,
+					  hmidi->RxBuffer,
 					  USB_MIDI_DATA_HS_OUT_SIZE);
 			  }
 			  else
@@ -2300,7 +2312,7 @@ uint8_t  USBD_MIDI_TransmitPacket(USBD_HandleTypeDef *pdev)
 			    /* Prepare Out endpoint to receive next packet */
 				  USBD_LL_PrepareReceive(pdev,
 					  USB_MIDI_DATA_OUT_EP,
-					  hcdc->RxBuffer,
+					  hmidi->RxBuffer,
 					  USB_MIDI_DATA_FS_OUT_SIZE);
 			  }
 			  return USBD_OK;

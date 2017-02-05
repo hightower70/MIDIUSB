@@ -21,7 +21,7 @@
 
 // MIDI out event buffer
 static USBMIDIEventPacket l_midi_output_queue_buffer[midiOUT_BUFFER_MAX_EVENT_COUNT];
-static midiEventQueueInfo l_midi_output_queue;
+/*static*/ midiEventQueueInfo l_midi_output_queue;
 static volatile bool l_is_transmitting;
 
 static MidiMessageType l_running_status;
