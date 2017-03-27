@@ -40,12 +40,12 @@
 
 //#define LED_Pin GPIO_PIN_13
 //#define LED_GPIO_Port GPIOC
-#define CONNECT_LED_Pin GPIO_PIN_6
+#define CONNECT_LED_Pin GPIO_PIN_1
 #define CONNECT_LED_GPIO_Port GPIOA
-#define TX_LED_Pin GPIO_PIN_7
-#define TX_LED_GPIO_Port GPIOA
-#define RX_LED_Pin GPIO_PIN_5
-#define RX_LED_GPIO_Port GPIOA
+#define TX_LED_Pin GPIO_PIN_13
+#define TX_LED_GPIO_Port GPIOC
+#define RX_LED_Pin GPIO_PIN_14
+#define RX_LED_GPIO_Port GPIOC
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

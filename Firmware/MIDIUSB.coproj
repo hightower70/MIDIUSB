@@ -87,9 +87,9 @@
     <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_ll_fsmc.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_ll_fsmc.h" type="1"/>
     <File name="LibOS/HAL/STM32F1xxCMSIS/Header files/stm32f1xx_hal_dac_ex.h" path="LibOS/STM32F1xxCMSIS/Include/stm32f1xx_hal_dac_ex.h" type="1"/>
     <File name="LibOS/HAL/STM32F1xxUSB/Header files/usbd_ctlreq.h" path="LibOS/STM32f1xxUSB/Include/usbd_ctlreq.h" type="1"/>
-    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_flash.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_flash.c" type="1"/>
-    <File name="LibOS/Header files/sysTimer.h" path="LibOS/Include/sysTimer.h" type="1"/>
     <File name="LibMIDI/Header files/midiTypes.h" path="LibMIDI/Include/midiTypes.h" type="1"/>
+    <File name="LibOS/Header files/sysTimer.h" path="LibOS/Include/sysTimer.h" type="1"/>
+    <File name="LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_flash.c" path="LibOS/STM32F1xxCMSIS/Source/stm32f1xx_hal_flash.c" type="1"/>
     <File name="Source files" path="" type="2"/>
     <File name="LibMIDI/Source files/midiInput.c" path="LibMIDI/Source/midiInput.c" type="1"/>
     <File name="LibOS/HAL/STM32F1xxUSB/Header files/usbd_midi.h" path="LibOS/STM32f1xxUSB/Include/usbd_midi.h" type="1"/>
