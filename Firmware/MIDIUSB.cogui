@@ -26,13 +26,9 @@
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="midiUSB.c" partName="midiUSB.c" path="D:/Projects/MIDIUSB/Firmware/LibMIDI/Source/midiUSB.c" title="midiUSB.c" tooltip="D:/Projects/MIDIUSB/Firmware/LibMIDI/Source/midiUSB.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MIDIUSB/LibMIDI/Source files/midiUSB.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5139" selectionTopPixel="1215"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="halMain.c" partName="halMain.c" path="D:/Projects/MIDIUSB/Firmware/LibOS/STM32F103MIDIUSBBoard/Source/halMain.c" title="halMain.c" tooltip="D:/Projects/MIDIUSB/Firmware/LibOS/STM32F103MIDIUSBBoard/Source/halMain.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="halMain.c" partName="halMain.c" path="D:/Projects/MIDI/MIDIUSB/Firmware/LibOS/STM32F103MIDIUSBBoard/Source/halMain.c" title="halMain.c" tooltip="D:/Projects/MIDI/MIDIUSB/Firmware/LibOS/STM32F103MIDIUSBBoard/Source/halMain.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MIDIUSB/LibOS/HAL/STM32F103MIDIUSBBoard/Source files/halMain.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2055" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2157" selectionTopPixel="493"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="sysConfig.h" partName="sysConfig.h" path="D:/Projects/MIDIUSB/Firmware/Include/sysConfig.h" title="sysConfig.h" tooltip="D:/Projects/MIDIUSB/Firmware/Include/sysConfig.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MIDIUSB/Header files/sysConfig.h"/>
@@ -42,9 +38,13 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MIDIUSB/Header files/mxconstants.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2394" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="halMIDIPort.c" partName="halMIDIPort.c" path="D:/Projects/MIDIUSB/Firmware/LibOS/STM32F103MIDIUSBBoard/Source/halMIDIPort.c" title="halMIDIPort.c" tooltip="D:/Projects/MIDIUSB/Firmware/LibOS/STM32F103MIDIUSBBoard/Source/halMIDIPort.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MIDIUSB/LibOS/HAL/STM32F103MIDIUSBBoard/Source files/halMIDIPort.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1976" selectionTopPixel="360"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="midiUSB.c" partName="midiUSB.c" path="D:/Projects/MIDIUSB/Firmware/LibMIDI/Source/midiUSB.c" title="midiUSB.c" tooltip="D:/Projects/MIDIUSB/Firmware/LibMIDI/Source/midiUSB.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MIDIUSB/LibMIDI/Source files/midiUSB.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4223" selectionTopPixel="990"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="usbd_midi_desc.c" partName="usbd_midi_desc.c" path="D:/Projects/MIDI/MIDIUSB/Firmware/LibOS/STM32f1xxUSB/Source/usbd_midi_desc.c" title="usbd_midi_desc.c" tooltip="D:/Projects/MIDI/MIDIUSB/Firmware/LibOS/STM32f1xxUSB/Source/usbd_midi_desc.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MIDIUSB/LibOS/HAL/STM32F1xxUSB/Source files/usbd_midi_desc.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2726" selectionTopPixel="720"/>
 </editor>
 </editors>
 <views>
@@ -54,26 +54,25 @@
 </viewState>
 </view>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="7">
+<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0">
 <expanded>
 <element path="/MIDIUSB"/>
-<element path="/MIDIUSB/Header files"/>
 <element path="/MIDIUSB/LibMIDI"/>
-<element path="/MIDIUSB/LibMIDI/Source files"/>
 <element path="/MIDIUSB/LibOS"/>
 <element path="/MIDIUSB/LibOS/HAL"/>
-<element path="/MIDIUSB/LibOS/HAL/STM32F103MIDIUSBBoard"/>
-<element path="/MIDIUSB/LibOS/HAL/STM32F103MIDIUSBBoard/Source files"/>
+<element path="/MIDIUSB/LibOS/HAL/STM32F1xxCMSIS"/>
+<element path="/MIDIUSB/LibOS/Source files"/>
 <element path="/MIDIUSB/Source files"/>
 </expanded>
 <selection>
-<element path="/MIDIUSB/LibOS/HAL/STM32F103MIDIUSBBoard/Source files/halMIDIPort.c"/>
+<element path="/MIDIUSB"/>
 </selection>
 </viewState>
 </view>
 <view id="org.coocox.component.ui.ComponentView" partName="Components">
 <viewState/>
 </view>
+<view id="org.coocox.codebugger.trace.ui.traceview" partName="Semihosting"/>
 <view id="org.eclipse.search.ui.views.SearchView" partName="Search">
 <viewState isPinned="false">
 <view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
@@ -91,7 +90,8 @@
 </view>
 <view id="org.coocox.coassistant.view.CoAssistantView_debug" partName="Peripherals">
 <viewState horizontalPosition="0" verticalPosition="0">
-<selection>&#x0A;<element name="USB"/>
+<selection>
+<element name="USB"/>
 </selection>
 <registerValues baseAddress="Base Address: 0x40005C00" description="Description:  USB device FS registers"/>
 </viewState>
@@ -235,52 +235,72 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.coocox.builder.ui.build"/>
 <hide_toolbar_item_id id="org.coocox.welcome.ui.action.welcome"/>
-<hide_toolbar_item_id id="org.coocox.codebugger.configuration.coideProgramDownloadAction"/>
 <hide_toolbar_item_id id="org.coocox.component.ui.ShowRepositoryAction"/>
+<hide_toolbar_item_id id="org.coocox.codebugger.configuration.coideProgramDownloadAction"/>
 <view id="org.coocox.builder.ui.views.ProjectView"/>
 <view id="org.eclipse.debug.ui.VariableView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.debug.ui.DebugView"/>
 <view id="org.eclipse.debug.ui.ExpressionView"/>
 <view id="org.coocox.coassistant.view.CoAssistantView_debug"/>
-<fastViewBars>&#x0A;<fastViewBar fastViewLocation="1024" id="org.eclipse.ui.internal.ViewStack@1a5a843" orientation="256" selectedTabId="org.eclipse.debug.ui.ExpressionView" style="0">&#x0A;<fastViews>&#x0A;<view id="org.coocox.codebugger.trace.ui.traceview" ratio="0.3"/>
+<fastViewBars>
+<fastViewBar fastViewLocation="1024" id="org.eclipse.ui.internal.ViewStack@1a5a843" orientation="256" selectedTabId="org.eclipse.debug.ui.ExpressionView" style="0">
+<fastViews>
+<view id="org.coocox.codebugger.trace.ui.traceview" ratio="0.3"/>
 </fastViews>
 </fastViewBar>
 </fastViewBars>
 <viewLayoutRec closeable="false" id="org.eclipse.debug.ui.DebugView"/>
-<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.ui.internal.ViewStack@14d67cf">&#x0A;<folder activePageID="org.coocox.builder.ui.views.ProjectView" appearance="2" expanded="2">&#x0A;<page content="org.coocox.builder.ui.views.ProjectView" label="Project"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<layout>
+<mainWindow>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@14d67cf">
+<folder activePageID="org.coocox.builder.ui.views.ProjectView" appearance="2" expanded="2">
+<page content="org.coocox.builder.ui.views.ProjectView" label="Project"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="1434" ratioRight="478" relationship="2" relative="org.eclipse.ui.internal.ViewStack@14d67cf">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="1434" ratioRight="478" relationship="2" relative="org.eclipse.ui.internal.ViewStack@14d67cf">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@11d74ce" ratio="0.513834" ratioLeft="390" ratioRight="369" relationship="4" relative="org.eclipse.ui.internal.ViewStack@14d67cf">&#x0A;<folder appearance="2" expanded="0">&#x0A;<page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@11d74ce" ratio="0.513834" ratioLeft="390" ratioRight="369" relationship="4" relative="org.eclipse.ui.internal.ViewStack@14d67cf">
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1a5a843" ratio="0.5" ratioLeft="956" ratioRight="956" relationship="2" relative="org.eclipse.ui.internal.ViewStack@11d74ce">&#x0A;<folder appearance="2" expanded="0">&#x0A;<page content="org.coocox.codebugger.trace.ui.traceview" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1a5a843" ratio="0.5" ratioLeft="956" ratioRight="956" relationship="2" relative="org.eclipse.ui.internal.ViewStack@11d74ce">
+<folder appearance="2" expanded="0">
+<page content="org.coocox.codebugger.trace.ui.traceview" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.MemoryView" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1c93dc0" ratio="0.7860289" ratioLeft="1249" ratioRight="340" relationship="2" relative="org.eclipse.ui.internal.ViewStack@14d67cf">&#x0A;<folder activePageID="org.coocox.coassistant.view.CoAssistantView_debug" appearance="2" expanded="2">&#x0A;<page content="org.coocox.coassistant.view.CoAssistantView_debug" label="Peripherals"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1c93dc0" ratio="0.7860289" ratioLeft="1249" ratioRight="340" relationship="2" relative="org.eclipse.ui.internal.ViewStack@14d67cf">
+<folder activePageID="org.coocox.coassistant.view.CoAssistantView_debug" appearance="2" expanded="2">
+<page content="org.coocox.coassistant.view.CoAssistantView_debug" label="Peripherals"/>
 <page content="org.eclipse.cdt.dsf.debug.ui.disassembly.view" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.26534295" ratioLeft="294" ratioRight="814" relationship="2" relative="org.eclipse.ui.internal.ViewStack@14d67cf"/>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@198bdef" ratio="0.4795784" ratioLeft="364" ratioRight="395" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@198bdef" ratio="0.4795784" ratioLeft="364" ratioRight="395" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="Expressions"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
@@ -295,9 +315,7 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/MIDIUSB/LibMIDI/Source files/midiUSB.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/MIDIUSB/LibOS/HAL/STM32F1xxCMSIS/startup_stm32f103xb.s"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/MIDIUSB/LibOS/HAL/STM32F1xxUSB/Source files/usbd_midi.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/MIDIUSB/LibOS/HAL/STM32F103MIDIUSBBoard/Source files/halMain.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/MIDIUSB/LibMIDI/Source files/midiEventQueue.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/MIDIUSB/LibMIDI/Header files/midiEventQueue.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/MIDIUSB/LibMIDI/Source files/midiInput.c"/>
@@ -312,55 +330,26 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/MIDIUSB/Header files/sysConfig.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/MIDIUSB/Header files/mxconstants.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/MIDIUSB/LibOS/HAL/STM32F103MIDIUSBBoard/Source files/halMIDIPort.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/MIDIUSB/LibMIDI/Source files/midiUSB.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/MIDIUSB/LibOS/HAL/STM32F103MIDIUSBBoard/Source files/halMain.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/MIDIUSB/LibMIDI/Source files/midiUSB.c"/>
+<editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.builder.ui.editors.ConfigEditor">
+<org.coocox.builder.ui.editors.ConfigEditor/>
+</editor>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/MIDIUSB/LibOS/HAL/STM32F103MIDIUSBBoard/Source files/halMain.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/MIDIUSB/LibOS/HAL/STM32F1xxUSB/Source files/usbd_midi_desc.c"/>
+<editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.builder.ui.editors.ConfigEditor">
+<org.coocox.builder.ui.editors.ConfigEditor horizontalPosition="0" subTagIndex="1" verticalPosition="0"/>
+</editor>
+<editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.builder.ui.editors.ConfigEditor">
+<org.coocox.builder.ui.editors.ConfigEditor/>
+</editor>
+<editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.builder.ui.editors.ConfigEditor">
+<org.coocox.builder.ui.editors.ConfigEditor/>
+</editor>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/MIDIUSB/LibOS/HAL/STM32F103MIDIUSBBoard/Source files/halMain.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/MIDIUSB/LibOS/HAL/STM32F1xxUSB/Source files/usbd_midi_desc.c"/>
 </editors>
-<item historyLabel="midiUSB.c" index="0">
-<position info="not_deleted" x="6585" y="0"/>
-</item>
-<item historyLabel="midiUSB.c" index="0">
-<position info="not_deleted" x="5692" y="0"/>
-</item>
-<item historyLabel="midiUSB.c" index="0">
-<position info="not_deleted" x="5644" y="0"/>
-</item>
-<item historyLabel="startup_stm32f103xb.s" index="1">
-<position/>
-</item>
-<item historyLabel="halMain.c" index="3">
-<position info="not_deleted" x="2157" y="0"/>
-</item>
-<item historyLabel="midiUSB.c" index="0">
-<position info="not_deleted" x="5644" y="0"/>
-</item>
-<item historyLabel="midiUSB.c" index="0">
-<position info="not_deleted" x="5371" y="0"/>
-</item>
-<item historyLabel="midiUSB.c" index="0">
-<position info="not_deleted" x="6428" y="0"/>
-</item>
-<item historyLabel="midiUSB.c" index="0">
-<position info="not_deleted" x="6512" y="0"/>
-</item>
-<item historyLabel="midiUSB.c" index="0">
-<position info="not_deleted" x="7291" y="0"/>
-</item>
-<item historyLabel="midiUSB.c" index="0">
-<position info="not_deleted" x="7334" y="0"/>
-</item>
-<item historyLabel="startup_stm32f103xb.s" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="halMain.c" index="8">
-<position info="not_deleted" x="2157" y="0"/>
-</item>
-<item historyLabel="midiUSB.c" index="0">
-<position info="not_deleted" x="5371" y="0"/>
-</item>
-<item historyLabel="midiUSB.c" index="0">
-<position info="not_deleted" x="6428" y="0"/>
-</item>
-<item historyLabel="midiUSB.c" index="0">
-<position info="not_deleted" x="6453" y="0"/>
-</item>
 <item historyLabel="midiUSB.c" index="0">
 <position info="not_deleted" x="5371" y="0"/>
 </item>
@@ -376,92 +365,129 @@
 <item historyLabel="midiUSB.c" index="0">
 <position info="not_deleted" x="5069" y="0"/>
 </item>
-<item historyLabel="midiEventQueue.c" index="4">
+<item historyLabel="midiEventQueue.c" index="2">
 <position info="not_deleted" x="1952" y="0"/>
 </item>
 <item historyLabel="midiUSB.c" index="0">
 <position info="not_deleted" x="5069" y="0"/>
 </item>
-<item historyLabel="midiEventQueue.h" index="5">
+<item historyLabel="midiEventQueue.h" index="3">
 <position info="not_deleted" x="2175" y="0"/>
 </item>
 <item historyLabel="midiUSB.c" index="0">
 <position info="not_deleted" x="5069" y="0"/>
 </item>
-<item historyLabel="usbd_def.h" index="9">
+<item historyLabel="usbd_def.h" index="7">
 <position info="not_deleted" x="8726" y="0"/>
 </item>
 <item historyLabel="midiUSB.c" index="0">
 <position info="not_deleted" x="5069" y="0"/>
 </item>
-<item historyLabel="usbd_midi.h" index="10">
+<item historyLabel="usbd_midi.h" index="8">
 <position info="not_deleted" x="3960" y="0"/>
 </item>
 <item historyLabel="midiUSB.c" index="0">
 <position info="not_deleted" x="5069" y="0"/>
 </item>
-<item historyLabel="usbd_midi.c" index="2">
+<item historyLabel="usbd_midi.c" index="1">
 <position info="not_deleted" x="72202" y="0"/>
 </item>
 <item historyLabel="midiUSB.c" index="0">
 <position info="not_deleted" x="5069" y="0"/>
 </item>
-<item historyLabel="midiInput.c" index="6">
+<item historyLabel="midiInput.c" index="4">
 <position info="not_deleted" x="7090" y="0"/>
 </item>
 <item historyLabel="midiUSB.c" index="0">
 <position info="not_deleted" x="5069" y="0"/>
 </item>
-<item historyLabel="midiInput.h" index="7">
+<item historyLabel="midiInput.h" index="5">
 <position info="not_deleted" x="1558" y="0"/>
 </item>
 <item historyLabel="midiUSB.c" index="0">
 <position info="not_deleted" x="5069" y="0"/>
 </item>
-<item historyLabel="halMain.c" index="8">
+<item historyLabel="halMain.c" index="6">
 <position info="not_deleted" x="2157" y="0"/>
 </item>
 <item historyLabel="midiUSB.c" index="0">
 <position info="not_deleted" x="5069" y="0"/>
 </item>
-<item historyLabel="halMIDIPort.c" index="11">
+<item historyLabel="halMIDIPort.c" index="9">
 <position info="not_deleted" x="4841" y="0"/>
 </item>
 <item historyLabel="midiUSB.c" index="0">
 <position info="not_deleted" x="5069" y="0"/>
 </item>
-<item historyLabel="halMain.c" index="12">
+<item historyLabel="halMain.c" index="10">
 <position info="not_deleted" x="2157" y="0"/>
 </item>
-<item historyLabel="midiUSB.c" index="13">
+<item historyLabel="midiUSB.c" index="11">
 <position info="not_deleted" x="5139" y="0"/>
 </item>
-<item historyLabel="halMain.c" index="12">
+<item historyLabel="halMain.c" index="10">
 <position info="not_deleted" x="2157" y="0"/>
 </item>
-<item historyLabel="halMain.c" index="12">
+<item historyLabel="halMain.c" index="10">
 <position info="not_deleted" x="2157" y="0"/>
 </item>
-<item historyLabel="halMain.c" index="12">
+<item historyLabel="halMain.c" index="10">
 <position info="not_deleted" x="2810" y="0"/>
 </item>
-<item historyLabel="halMain.c" index="12">
+<item historyLabel="halMain.c" index="10">
 <position info="not_deleted" x="2157" y="0"/>
 </item>
-<item historyLabel="midiUSB.c" index="14">
+<item historyLabel="midiUSB.c" index="12">
 <position info="not_deleted" x="5139" y="0"/>
 </item>
-<item historyLabel="sysConfig.h" index="15">
+<item historyLabel="sysConfig.h" index="13">
 <position info="not_deleted" x="117" y="0"/>
 </item>
-<item historyLabel="mxconstants.h" index="16">
+<item historyLabel="mxconstants.h" index="14">
 <position info="not_deleted" x="2394" y="0"/>
 </item>
-<item historyLabel="sysConfig.h" index="15">
+<item historyLabel="sysConfig.h" index="13">
 <position info="not_deleted" x="117" y="0"/>
 </item>
-<item active="true" historyLabel="halMIDIPort.c" index="17">
+<item historyLabel="halMIDIPort.c" index="15">
+<position info="not_deleted" x="1932" y="0"/>
+</item>
+<item historyLabel="midiUSB.c" index="16">
+<position info="not_deleted" x="5139" y="0"/>
+</item>
+<item historyLabel="halMain.c" index="17">
+<position info="not_deleted" x="2055" y="0"/>
+</item>
+<item historyLabel="midiUSB.c" index="18">
 <position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Configuration" index="19"/>
+<item historyLabel="midiUSB.c" index="18">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="halMain.c" index="20">
+<position info="not_deleted" x="2055" y="0"/>
+</item>
+<item historyLabel="halMain.c" index="20">
+<position info="not_deleted" x="2157" y="0"/>
+</item>
+<item historyLabel="usbd_midi_desc.c" index="21">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Configuration" index="22"/>
+<item historyLabel="Configuration" index="23"/>
+<item historyLabel="Configuration" index="24"/>
+<item historyLabel="halMain.c" index="25">
+<position info="not_deleted" x="2157" y="0"/>
+</item>
+<item historyLabel="usbd_midi_desc.c" index="26">
+<position info="not_deleted" x="2726" y="0"/>
+</item>
+<item historyLabel="halMain.c" index="25">
+<position info="not_deleted" x="2157" y="0"/>
+</item>
+<item active="true" historyLabel="halMain.c" index="25">
+<position info="not_deleted" x="2157" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -470,6 +496,12 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usbd_midi_desc.c" tooltip="MIDIUSB/LibOS/HAL/STM32F1xxUSB/Source files/usbd_midi_desc.c">
+<persistable path="/MIDIUSB/LibOS/HAL/STM32F1xxUSB/Source files/usbd_midi_desc.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="midiUSB.c" tooltip="MIDIUSB/LibMIDI/Source files/midiUSB.c">
+<persistable path="/MIDIUSB/LibMIDI/Source files/midiUSB.c"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="halMIDIPort.c" tooltip="MIDIUSB/LibOS/HAL/STM32F103MIDIUSBBoard/Source files/halMIDIPort.c">
 <persistable path="/MIDIUSB/LibOS/HAL/STM32F103MIDIUSBBoard/Source files/halMIDIPort.c"/>
 </file>
@@ -505,15 +537,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usbd_midi.c" tooltip="MIDIUSB/LibOS/HAL/STM32F1xxUSB/Source files/usbd_midi.c">
 <persistable path="/MIDIUSB/LibOS/HAL/STM32F1xxUSB/Source files/usbd_midi.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f1xx_ll_usb.c" tooltip="MIDIUSB/LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_ll_usb.c">
-<persistable path="/MIDIUSB/LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_ll_usb.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f1xx_hal_pcd.c" tooltip="MIDIUSB/LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_pcd.c">
-<persistable path="/MIDIUSB/LibOS/HAL/STM32F1xxCMSIS/Source files/stm32f1xx_hal_pcd.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usbd_ioreq.c" tooltip="MIDIUSB/LibOS/HAL/STM32F1xxUSB/Source files/usbd_ioreq.c">
-<persistable path="/MIDIUSB/LibOS/HAL/STM32F1xxUSB/Source files/usbd_ioreq.c"/>
 </file>
 </mruList>
 </workbench>
