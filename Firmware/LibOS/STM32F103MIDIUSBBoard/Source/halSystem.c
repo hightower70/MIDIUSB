@@ -41,6 +41,9 @@ void sysInitialization(void)
 	halMIDIPortInitialize();
 	midiInputInitialize();
 	midiOutputInitialize();
+
+	// initialize app
+	appInitialization();
 }
 
 ///////////////////////////////////////////////////////////////////////////////

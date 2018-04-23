@@ -196,6 +196,7 @@ uint8_t *  USBD_FS_LangIDStrDescriptor( USBD_SpeedTypeDef speed , uint16_t *leng
 * @param  length : pointer to data length variable
 * @retval pointer to descriptor buffer
 */
+/* Product descriptor is customized
 uint8_t *  USBD_FS_ProductStrDescriptor( USBD_SpeedTypeDef speed , uint16_t *length)
 {
   if(speed == 0)
@@ -208,7 +209,7 @@ uint8_t *  USBD_FS_ProductStrDescriptor( USBD_SpeedTypeDef speed , uint16_t *len
   }
   return USBD_StrDesc;
 }
-
+*/
 /**
 * @brief  USBD_FS_ManufacturerStrDescriptor 
 *         return the manufacturer string descriptor

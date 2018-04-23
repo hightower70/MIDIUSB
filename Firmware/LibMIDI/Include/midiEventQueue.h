@@ -37,6 +37,7 @@ void midiEventQueueInitialize(midiEventQueueInfo* in_event_queue, USBMIDIEventPa
 bool midiEventQueueIsEmpty(midiEventQueueInfo* in_event_queue);
 bool midiEventQueuePush(midiEventQueueInfo* in_event_queue, USBMIDIEventPacket in_event);
 USBMIDIEventPacket midiEventQueuePop(midiEventQueueInfo* in_event_queue);
+USBMIDIEventPacket midiEventQueuePeek(midiEventQueueInfo* in_event_queue, uint16_t* in_peek_index);
 void midiEventQueueClear(midiEventQueueInfo* in_event_queue);
 
 

@@ -86,7 +86,7 @@ USBMIDIEventPacket midiEventQueuePop(midiEventQueueInfo* in_event_queue)
 	retval.EventData = 0;
 	
 	// check if buffer contains event
-	if (in_event_queue->PopIndex  != in_event_queue->PushIndex)
+	if (in_event_queue->PopIndex != in_event_queue->PushIndex)
 	{
 		// increment pop pointer
 		new_pop_pointer = in_event_queue->PopIndex + 1;
@@ -98,6 +98,34 @@ USBMIDIEventPacket midiEventQueuePop(midiEventQueueInfo* in_event_queue)
 		in_event_queue->PopIndex = new_pop_pointer;
 	}
 	
+	return retval;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+/// @brief Peeks MIDI event from the queue.
+/// @param in_event_queue Event queue state descriptor
+/// @return MIDI event, invalidated of there is no event in the queue
+USBMIDIEventPacket midiEventQueuePeek(midiEventQueueInfo* in_event_queue, uint16_t* in_peek_index)
+{
+	USBMIDIEventPacket retval;
+	uint16_t peek_index = *in_peek_index;
+
+	retval.EventData = 0;
+
+	// check if buffer contains event
+	if (peek_index != in_event_queue->PushIndex)
+	{
+		// increment pop pointer
+		peek_index++;
+		if (peek_index >= in_event_queue->EventQueueSize)
+			peek_index = 0;
+
+		retval.EventData = in_event_queue->EventQueue[peek_index].EventData;
+
+		*in_peek_index = peek_index;
+	}
+
 	return retval;
 }
 

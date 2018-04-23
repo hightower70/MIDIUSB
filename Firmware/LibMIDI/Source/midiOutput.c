@@ -20,8 +20,8 @@
 /*****************************************************************************/
 
 // MIDI out event buffer
-static USBMIDIEventPacket l_midi_output_queue_buffer[midiOUT_BUFFER_MAX_EVENT_COUNT];
-/*static*/ midiEventQueueInfo l_midi_output_queue;
+static USBMIDIEventPacket g_midi_output_queue_buffer[midiOUT_BUFFER_MAX_EVENT_COUNT];
+midiEventQueueInfo g_midi_output_queue;
 static volatile bool l_is_transmitting;
 
 static MidiMessageType l_running_status;
@@ -34,7 +34,7 @@ static MidiMessageType l_running_status;
 /// @brief Initialize MIDI output
 void midiOutputInitialize(void)
 {
-	midiEventQueueInitialize(&l_midi_output_queue, l_midi_output_queue_buffer, midiOUT_BUFFER_MAX_EVENT_COUNT);
+	midiEventQueueInitialize(&g_midi_output_queue, g_midi_output_queue_buffer, midiOUT_BUFFER_MAX_EVENT_COUNT);
 	l_running_status = MIDI_INVALID_TYPE;
 	l_is_transmitting = false;
 }
@@ -43,7 +43,7 @@ void midiOutputInitialize(void)
 /// @brief Returns the state of the MIDI Out buffer
 bool midiOutputIsEmpty(void)
 {
-	return midiEventQueueIsEmpty(&l_midi_output_queue);
+	return midiEventQueueIsEmpty(&g_midi_output_queue);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -65,7 +65,7 @@ bool midiOutputIsTransmitting(void)
 /// @return true if event was pushed or false is there is no space in the buffer
 bool midiOutputEventPush(USBMIDIEventPacket in_event)
 {
-	return midiEventQueuePush(&l_midi_output_queue, in_event);
+	return midiEventQueuePush(&g_midi_output_queue, in_event);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -83,11 +83,11 @@ bool midiOutputEventPopAndStore(uint8_t* in_midi_buffer, uint16_t in_midi_buffer
 		return false;	
 	
 	// check if buffer contains event
-	if (midiEventQueueIsEmpty(&l_midi_output_queue))
+	if (midiEventQueueIsEmpty(&g_midi_output_queue))
 		return false;
 	
 	// pop event
-	event = midiEventQueuePop(&l_midi_output_queue);
+	event = midiEventQueuePop(&g_midi_output_queue);
 
 	// convert data from USB event format to MIDI message and store it in the buffer
 	switch (event.PacketHeader)
