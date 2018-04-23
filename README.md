@@ -18,3 +18,6 @@ The repository contains all information to build the cable, it has the schematic
   <br><br>
   The complete device  
 </p>
+
+# PCB
+The PCB can be ordered directly from the following link: [Dirty Cheap PCB](http://dirtypcbs.com/store/designer/details/8873/5868/midiusb-zip)
