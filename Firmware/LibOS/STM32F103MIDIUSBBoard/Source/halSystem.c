@@ -9,6 +9,7 @@
 #include <midiUSB.h>
 #include <midiInput.h>
 #include <midiOutput.h>
+#include <appMain.h>
 
 /*****************************************************************************/
 /* Local function prototypes                                                 */

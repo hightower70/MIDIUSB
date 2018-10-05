@@ -1,5 +1,5 @@
 /*****************************************************************************/
-/* USB MIDI converter main File                                              */
+/* USB-MIDI converter main File                                              */
 /*                                                                           */
 /* Copyright (C) 2016 Laszlo Arvai                                           */
 /* All rights reserved.                                                      */
@@ -30,9 +30,15 @@
 /*****************************************************************************/
 #define midiOUT_BUFFER_LENGTH 256
 #define midiSYSEX_HEADER_LENGTH 4
+#define midiSYSEX_PID_LENGTH 4
 #define midiSYSEX_END 0xf7
 #define midiMAX_CABLE_NAME_LENGTH 16
 #define CABLE_NAME_FLASH_START_ADDRESS 0x0800FC00
+
+/*****************************************************************************/
+/* External variables                                                        */
+/*****************************************************************************/
+extern uint8_t USBD_FS_DeviceDesc[USB_LEN_DEV_DESC];
 
 /*****************************************************************************/
 /* Module global variables                                                   */
@@ -48,7 +54,8 @@ static uint8_t l_sysex_header[] = {0xf0, 0x7d, 0x1a, 0x55};
 static int l_sysex_pos = 0;
 
 static char l_cable_name_buffer[midiMAX_CABLE_NAME_LENGTH+1]; // +1 because of the terminator zero
-static char l_new_cable_name_buffer[midiMAX_CABLE_NAME_LENGTH];
+static char l_new_cable_name_buffer[midiMAX_CABLE_NAME_LENGTH+1];
+static uint16_t l_pid;
 
 static char* l_default_cable_name = "USB-MIDI Cable";
 
@@ -74,6 +81,7 @@ void appInitialization(void)
 	uint16_t name_char;
 	uint32_t address;
 	uint16_t flag;
+	uint16_t pid;
 
 	// load name valid flag
 	flag = FLASHReadHalfWord(0);
@@ -81,14 +89,22 @@ void appInitialization(void)
 	// load cable name from FLASH
 	if(flag == 0)
 	{
+		// read PID from flash
+		pid = FLASHReadHalfWord(1);
+
+		USBD_FS_DeviceDesc[10] = LOBYTE(pid);
+		USBD_FS_DeviceDesc[11] = HIBYTE(pid);
+
 		// read cable name from FLASH
 		address = 0;
 		do
 		{
-			name_char = FLASHReadHalfWord(address+1);
+			name_char = FLASHReadHalfWord(address+2);
 			l_cable_name_buffer[address] = (uint8_t)name_char;
 			address++;
 		} while ((uint8_t)name_char != '\0');
+
+		l_cable_name_buffer[address] = '\0';
 	}
 	else
 	{
@@ -253,7 +269,7 @@ static void CheckSysexByte(uint8_t in_byte)
 			if(in_byte == midiSYSEX_END)
 			{
 				// finish sysex
-				l_new_cable_name_buffer[l_sysex_pos - midiSYSEX_HEADER_LENGTH] = '\0';
+				l_new_cable_name_buffer[l_sysex_pos - midiSYSEX_HEADER_LENGTH - midiSYSEX_PID_LENGTH] = '\0';
 				l_sysex_pos = 0;
 
 				// write new cable name to the FLASH
@@ -262,19 +278,23 @@ static void CheckSysexByte(uint8_t in_byte)
 				// write name only if it is not empty
 				if(l_new_cable_name_buffer[0] != '\0')
 				{
-					FLASHWriteHalfWord(0,0); // Flag name is valid
+					// Flag name is valid
+					FLASHWriteHalfWord(0,0);
+
+					// Write PID
+					FLASHWriteHalfWord(1,l_pid);
 
 					// write name
 					i = 0;
 					while(l_new_cable_name_buffer[i] != '\0')
 					{
-						FLASHWriteHalfWord(i+1, l_new_cable_name_buffer[i]);
+						FLASHWriteHalfWord(i+2, l_new_cable_name_buffer[i]);
 
 						i++;
 					}
 
 					// write terminator zero
-					FLASHWriteHalfWord(i+1, l_new_cable_name_buffer[i]);
+					FLASHWriteHalfWord(i+2, '\0');
 				}
 
 				// protect FLASH
@@ -282,11 +302,38 @@ static void CheckSysexByte(uint8_t in_byte)
 			}
 			else
 			{
-				// store cable name
-				if((l_sysex_pos - midiSYSEX_HEADER_LENGTH) < midiMAX_CABLE_NAME_LENGTH)
+				if(l_sysex_pos < midiSYSEX_HEADER_LENGTH + midiSYSEX_PID_LENGTH)
 				{
-					l_new_cable_name_buffer[l_sysex_pos - midiSYSEX_HEADER_LENGTH] = in_byte;
+					in_byte &= 0x0f;
+
+					switch(l_sysex_pos - midiSYSEX_HEADER_LENGTH)
+					{
+						case 0:
+							l_pid = (uint16_t)in_byte;
+							break;
+
+						case 1:
+							l_pid |= (uint16_t)in_byte << 4;
+							break;
+
+						case 2:
+							l_pid |= (uint16_t)in_byte << 8;
+							break;
+
+						case 3:
+							l_pid |= (uint16_t)in_byte << 12;
+							break;
+					}
 					l_sysex_pos++;
+				}
+				else
+				{
+					// store cable name
+					if((l_sysex_pos - midiSYSEX_HEADER_LENGTH - midiSYSEX_PID_LENGTH) < midiMAX_CABLE_NAME_LENGTH)
+					{
+						l_new_cable_name_buffer[l_sysex_pos - midiSYSEX_HEADER_LENGTH - midiSYSEX_PID_LENGTH] = in_byte;
+						l_sysex_pos++;
+					}
 				}
 			}
 		}
