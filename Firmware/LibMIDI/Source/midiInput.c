@@ -177,7 +177,8 @@ void midiInputDataReceived(uint8_t in_data)
 					l_current_input_packet.Status = in_data;
 					l_current_received_byte_count = 1;
 			
-					l_expected_byte_count = midiGetMessageLength(l_current_input_packet.Status);
+					l_expected_byte_count = midiGetMessageLength(
+                                                                                     l_current_input_packet.Status);
 				}
 			}
 		}
