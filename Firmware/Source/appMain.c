@@ -126,7 +126,7 @@ void appMainTask(void)
 {
 	// LED blinking routine
 	appSetLEDState();
-	
+
 	// task to handle MIDI communication (except USB->MIDI)
 	midiUSBTask();
 
@@ -164,7 +164,7 @@ static void appSetLEDState(void)
 			drvHAL_SetPinHigh(TX_LED_GPIO_Port, TX_LED_Pin);
 		}
 	}
-	
+
 	// RX LED State
 	if (midiInputIsReceiving())
 	{
@@ -186,7 +186,7 @@ static void appUSBToMIDITask(void)
 {
 	uint16_t pos;
 	bool repeat;
-	
+
 	if (!midiOutputIsEmpty() && halMIDIIsTransmitterEmpty())
 	{
 		pos = 0;
@@ -195,7 +195,7 @@ static void appUSBToMIDITask(void)
 			CheckForUSBNameSettings();
 			repeat = midiOutputEventPopAndStore(l_midi_out_buffer, midiOUT_BUFFER_LENGTH, &pos);
 		} while (repeat);
-		
+
 		halMIDIPortSendBuffer(l_midi_out_buffer, pos);
 	}
 }
@@ -418,4 +418,8 @@ static HAL_StatusTypeDef FLASHWriteHalfWord(uint32_t address, uint16_t data)
   while(!__HAL_FLASH_GET_FLAG(FLASH_FLAG_BSY) == RESET);
 
   return status;
+}
+
+void _init(void) {
+
 }
