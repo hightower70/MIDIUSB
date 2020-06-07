@@ -4,7 +4,7 @@
   * Description        : This file contains the common defines of the application
   ******************************************************************************
   *
-  * COPYRIGHT(c) 2016 STMicroelectronics
+  * COPYRIGHT(c) 2017 STMicroelectronics
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -37,17 +37,12 @@
 /* USER CODE END Includes */
 
 /* Private define ------------------------------------------------------------*/
-
-#define LED_Pin GPIO_PIN_13
-#define LED_GPIO_Port GPIOC
-#define WIFI_TX_Pin GPIO_PIN_9
-#define WIFI_TX_GPIO_Port GPIOA
-#define WIFI_RX_Pin GPIO_PIN_10
-#define WIFI_RX_GPIO_Port GPIOA
-#define SSD1306_SCL_Pin GPIO_PIN_6
-#define SSD1306_SCL_GPIO_Port GPIOB
-#define SSD1306_SDA_Pin GPIO_PIN_7
-#define SSD1306_SDA_GPIO_Port GPIOB
+#define CONNECT_LED_Pin GPIO_PIN_1
+#define CONNECT_LED_GPIO_Port GPIOA
+#define TX_LED_Pin GPIO_PIN_13
+#define TX_LED_GPIO_Port GPIOC
+#define RX_LED_Pin GPIO_PIN_14
+#define RX_LED_GPIO_Port GPIOC
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

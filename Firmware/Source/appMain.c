@@ -420,6 +420,3 @@ static HAL_StatusTypeDef FLASHWriteHalfWord(uint32_t address, uint16_t data)
   return status;
 }
 
-void _init(void) {
-
-}
